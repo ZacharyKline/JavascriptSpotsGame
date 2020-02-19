@@ -1,0 +1,13 @@
+body {
+    background-image: url('https://media.giphy.com/media/5ts3wTHyJHHZRamago/giphy.gif');
+    background-size: cover;
+    font-weight: bolder;
+    text-shadow: 1px 1px white;
+}
+
+.right, .left{
+    background: rgba(255, 255, 255, 0.89);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid  black;
+}
