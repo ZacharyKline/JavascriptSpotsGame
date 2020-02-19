@@ -3,6 +3,8 @@ let t1shots = document.getElementById('teamone-numshots')
 let t1goals = document.getElementById('teamone-numhits')
 let t2shots = document.getElementById('teamtwo-numshots')
 let t2goals = document.getElementById('teamtwo-numhits')
+let t1wins = document.getElementById('teamone-wins')
+let t2wins = document.getElementById('teamtwo-wins')
 let resets = document.getElementById('num-resets')
 let t1Button = document.getElementById("teamone-shoot");
 let t2Button = document.getElementById("teamtwo-shoot");
@@ -12,6 +14,8 @@ let team2shots = 0
 let team1goal = 0
 let team2goal = 0
 let resetNum = 0
+let team1wins = 0
+let team2wins = 0
 let goalSound = new Audio('./assets/sound/goal.wav');
 let missSound = new Audio('./assets/sound/miss.wav');
 let resetSound = new Audio('./assets/sound/reset.wav');
@@ -56,12 +60,17 @@ function resetButton(){
     rButton.addEventListener('click', function(){
         console.log('Game reset')
         if (team1goal < team2goal) {
+            team2wins++
+            t2wins.innerHTML = team2wins
+
             alert('Team 2 wins!')
         } else if (team2goal == team1goal) {
             alert('Its a tie!')
         } 
         else {
             alert('Team 1 wins!')
+            team1wins++
+            t1wins.innerHTML = team1wins
         }
         team1shots = 0
         t1shots.innerHTML = team1shots
